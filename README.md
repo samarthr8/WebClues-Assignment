@@ -72,6 +72,7 @@
     ```bash
     ansible-playbook playbook.yaml -i inventory
     ```
+6. Map the domain name with the IP of the EC2 instance which is serving files on Nginx.
 
 ### Task 3 Deliverables:
 - [Terraform and Ansible Files](Task-3/)
