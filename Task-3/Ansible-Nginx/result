@@ -1,0 +1,18 @@
+server {
+        listen 80 ;
+        listen [::]:80 ;
+
+
+        root /var/www/html/result;    				#Create a result directory at /var/www/html/
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name result.com;					# Update with your registered domain name
+
+        location / {
+                proxy_pass http://34.201.67.173:3000;		# Add the url of the instance where your Nodejs app is running as a  container
+        }
+
+
+}
+

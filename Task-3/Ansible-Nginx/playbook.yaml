@@ -1,0 +1,27 @@
+---
+- name: Install Nginx
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+    
+  tasks:
+  - name: Install Nginx
+    apt:
+      name: nginx
+      state: latest
+      
+  - name: copy web page template
+    template:
+      src: result
+      dest: /etc/nginx/sites-available/result
+  
+  - name: Enable Nginx site
+    file:
+      src: /etc/nginx/sites-available/result
+      dest: /etc/nginx/sites-enabled/result
+      state: link       
+
+  - name: start nginx
+    service:
+      name: nginx
+      state: restarted
