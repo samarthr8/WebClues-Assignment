@@ -11,7 +11,7 @@ spec:
         rollingUpdate:
            maxSurge: 0
            maxUnavailable: 100%    
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       name: result
@@ -37,11 +37,11 @@ spec:
             periodSeconds: 5
         resources:
             requests:
-              memory: "300Mi"
-              cpu: .3
-            limits:
               memory: "500Mi"
               cpu: .5
+            limits:
+              memory: "1000Mi"
+              cpu: 1
 
 ---
 
