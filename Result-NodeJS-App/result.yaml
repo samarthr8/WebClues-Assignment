@@ -11,7 +11,7 @@ spec:
         rollingUpdate:
            maxSurge: 0
            maxUnavailable: 100%    
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       name: result
